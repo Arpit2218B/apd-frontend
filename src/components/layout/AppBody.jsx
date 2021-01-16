@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ALERTS } from '../../dataStore/actionConstants';
 import '../../styles/components/AppBody.scss'
 import Alert from '../common/Alerts';
 import Header from './Header';
 import Sidebar from './Sidebar';
-
-const sidebarStyle = {
-    width: "5vw"
-}
 
 const AppBody = ({ children }) => {
 
@@ -47,13 +43,15 @@ const AppBody = ({ children }) => {
         })
     }
 
-    const [collapsed, setCollapsed] = useState(false);
+    const counter = useRef(1);
+
+    useEffect(() => {
+        counter.current++;
+    })
     
     return (
         <div className="appBody">
-            <div style={collapsed ? sidebarStyle : null} className="sidebar">
-                <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} />
-            </div>
+            <Sidebar />
             <div className="body">
                 <Header />
                 <div className="content">
@@ -63,6 +61,7 @@ const AppBody = ({ children }) => {
                 <button onClick={errorOut} >Error</button>
                 <button onClick={warnOut} >Warning</button>
                 <button onClick={messageOut} >Success</button>
+                {counter.current}
             </div>
         </div>
     )
