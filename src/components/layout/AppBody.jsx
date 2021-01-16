@@ -13,7 +13,6 @@ const sidebarStyle = {
 const AppBody = ({ children }) => {
 
     const dispatch = useDispatch();
-    const notif = useSelector(state => state.alertReducer);
 
     const errorOut = () => {
         dispatch({
@@ -58,7 +57,7 @@ const AppBody = ({ children }) => {
             <div className="body">
                 <Header />
                 <div className="content">
-                    {notif.isSet ? <Alert type={notif.type} content={notif.content} /> : null}
+                    <Alert />
                     {children}
                 </div>
                 <button onClick={errorOut} >Error</button>
