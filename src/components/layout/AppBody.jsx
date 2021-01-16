@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ALERTS } from '../../dataStore/actionConstants';
 import '../../styles/components/AppBody.scss'
 import Alert from '../common/Alerts';
+import Dropdown from '../common/Dropdown';
 import Header from './Header';
 import Sidebar from './Sidebar';
 
@@ -62,6 +63,8 @@ const AppBody = ({ children }) => {
                 <button onClick={warnOut} >Warning</button>
                 <button onClick={messageOut} >Success</button>
                 {counter.current}
+                <Dropdown  options={['Last 10 days', 'Last week', 'Last month']} changeHandler={(e) => alert(e.target.value)} />
+                <Dropdown  options={[10, 20, 30, 40]} changeHandler={(e) => alert(e.target.value * 10)} />
             </div>
         </div>
     )
