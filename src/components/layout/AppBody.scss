@@ -5,6 +5,7 @@
 
 .sidebar {
   width: 15vw;
+  max-width: 240px;
   transition: width 0.55s;
   display: flex;
   flex-direction: column;
