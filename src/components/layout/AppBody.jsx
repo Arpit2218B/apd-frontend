@@ -4,6 +4,7 @@ import { ALERTS } from '../../dataStore/actionConstants';
 import '../../styles/components/AppBody.scss'
 import Alert from '../common/Alerts';
 import Dropdown from '../common/Dropdown';
+import Tasks from '../common/Tasks';
 import Header from './Header';
 import Sidebar from './Sidebar';
 
@@ -59,6 +60,12 @@ const AppBody = ({ children }) => {
                     <Alert />
                     {children}
                 </div>
+                <Tasks>
+                    <button>Open</button>
+                </Tasks>
+                <Tasks>
+                    <h1>HELLO</h1>
+                </Tasks>
                 <button onClick={errorOut} >Error</button>
                 <button onClick={warnOut} >Warning</button>
                 <button onClick={messageOut} >Success</button>
