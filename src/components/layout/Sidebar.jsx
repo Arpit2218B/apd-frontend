@@ -1,5 +1,7 @@
 import { Add, BarChartOutlined, ChevronLeftOutlined, ChevronRightOutlined, DashboardOutlined, PlaylistAddCheckOutlined, SettingsOutlined, SubjectOutlined } from '@material-ui/icons';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Tasks from '../common/Tasks';
 import NavItems from './NavLinks';
 
 const iconStyle = {
@@ -21,38 +23,48 @@ const Sidebar = () => {
                     <h2>APD</h2>
                 </div>
                 <div className="addTask">
-                    <NavItems 
-                        type="button" 
-                        content="Add task" 
-                        icon={<Add />} 
-                        collapsed={collapsed} 
-                    />
+                    <Tasks>
+                        <NavItems 
+                            type="button" 
+                            content="Add task" 
+                            icon={<Add />} 
+                            collapsed={collapsed} 
+                        />
+                    </Tasks>
                 </div>
                 <div className="topnav">
-                    <NavItems 
-                        type="link" 
-                        content="Dashboard" 
-                        icon={<DashboardOutlined />} 
-                        collapsed={collapsed} 
-                    />
-                    <NavItems 
-                        type="link" 
-                        content="Current Tasks" 
-                        icon={<SubjectOutlined />} 
-                        collapsed={collapsed} 
-                    />
-                    <NavItems 
-                        type="link" 
-                        content="Completed Tasks" 
-                        icon={<PlaylistAddCheckOutlined />} 
-                        collapsed={collapsed} 
-                    />
-                    <NavItems 
-                        type="link" 
-                        content="Reports" 
-                        icon={<BarChartOutlined />} 
-                        collapsed={collapsed} 
-                    />
+                    <Link to="/app/dashboard">
+                        <NavItems 
+                            type="link" 
+                            content="Dashboard" 
+                            icon={<DashboardOutlined />} 
+                            collapsed={collapsed} 
+                        />
+                    </Link>
+                    <Link to="/app/current">
+                        <NavItems 
+                            type="link" 
+                            content="Current Tasks" 
+                            icon={<SubjectOutlined />} 
+                            collapsed={collapsed} 
+                        />
+                    </Link>
+                    <Link to="/app/completed">
+                        <NavItems 
+                            type="link" 
+                            content="Completed Tasks" 
+                            icon={<PlaylistAddCheckOutlined />} 
+                            collapsed={collapsed} 
+                        />
+                    </Link>
+                    <Link to="/app/reports">
+                        <NavItems 
+                            type="link" 
+                            content="Reports" 
+                            icon={<BarChartOutlined />} 
+                            collapsed={collapsed} 
+                        />
+                    </Link>
                 </div>
             </div>
             <div className="bottom">

@@ -54,6 +54,12 @@
       font-size: 18px;
       align-items: center;
 
+      a {
+        color: inherit;
+        width: 100%;
+        text-decoration: none;
+      }
+
       .links {
         padding: 10px 8px;
         width: 100%;
