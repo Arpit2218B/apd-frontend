@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import { USER } from '../../dataStore/actionConstants';
 import '../../styles/components/Login.scss';
+import { auth, provider } from '../../utils/firebase';
 
 const Login = () => {
 
@@ -13,19 +14,29 @@ const Login = () => {
 
     const dispatch = useDispatch();
 
-    const loginHandler = () => {
-        const jwt = {
-            'userName': 'Arpit',
-            'email': 'test@google.com'
+    const fetchUser = (userObject) => {
+        const newUser = {
+            name: userObject.additionalUserInfo.profile.name,
+            id: userObject.additionalUserInfo.profile.id
         }
+        return newUser;
+    }
 
-        localStorage.setItem('jwt', JSON.stringify(jwt));
-        dispatch({
-            type: USER.SET_USER,
-            payload: jwt
+    const loginHandler = () => {
+
+        auth.signInWithPopup(provider)
+        .then(res => {
+            const userObj = fetchUser(res);
+            // call /login api from backend
+            localStorage.setItem('jwt', JSON.stringify(userObj));
+            dispatch({
+                type: USER.SET_USER,
+                payload: userObj
+            })
+
+            history.push('/app/dashboard');
         })
-
-        history.push('/app/dashboard');
+        .catch(err => setError(err.message));
     }
 
     return (
