@@ -1,9 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Redirect, Route } from 'react-router-dom';
 
 const ProtectedRoute = ({ children, ...rest }) => {
 
-    const isAuthenticated = true;
+    const user = useSelector(state => state.userReducer);
+
+    const isAuthenticated = user.user != null;
     return (
         <Route {...rest} render={() => {
           return isAuthenticated === true

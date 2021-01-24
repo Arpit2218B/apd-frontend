@@ -6,8 +6,8 @@ import Dropdown from './Dropdown';
 
 const Tasks = ({ children }) => {
 
-    const [ showModal, setShowModal ] = useState(true);
-    const editable = true;
+    const [ showModal, setShowModal ] = useState(false);
+    const editable = !true;
 
     const Modal = (
         <div className="modal">

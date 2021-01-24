@@ -1,10 +1,32 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router';
+import { USER } from '../../dataStore/actionConstants';
 import '../../styles/components/Login.scss';
 
 const Login = () => {
 
     const [ template, setTemplate ] = useState('Register');
     const [ error, setError ] = useState('');
+
+    const history = useHistory();
+
+    const dispatch = useDispatch();
+
+    const loginHandler = () => {
+        const jwt = {
+            'userName': 'Arpit',
+            'email': 'test@google.com'
+        }
+
+        localStorage.setItem('jwt', JSON.stringify(jwt));
+        dispatch({
+            type: USER.SET_USER,
+            payload: jwt
+        })
+
+        history.push('/app/dashboard');
+    }
 
     return (
         <div className="login">
@@ -23,7 +45,7 @@ const Login = () => {
                     {error ? <span className="login__error">Error: {error}</span> : null }
                 </div>
                 <span className="login__separator">or</span>
-                <div className="login__google">
+                <div className="login__google" onClick={loginHandler}>
                     <span>{template} with Google</span>
                     <img src="https://img.favpng.com/7/1/24/google-logo-google-search-icon-png-favpng-DLXaPGArrFH6yJjYE8USnMuvX_t.jpg"></img>
                 </div>
