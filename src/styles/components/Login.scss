@@ -3,23 +3,24 @@
   display: flex;
 
   .login__left {
-    flex-basis: 55%;
-    // background-color: rgba(63, 129, 252, 0.85);
+    flex: 55%;
     background: url("https://image.shutterstock.com/image-vector/effective-competent-leader-businessman-manager-600w-418203571.jpg");
     background-size: cover;
   }
 
   .login__right {
-    flex-basis: 45%;
+    flex: 45%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
 
-  .login__right {
+    * {
+      margin: 10px 0;
+    }
+
     h1 {
-      font-size: 8rem;
+      font-size: 6rem;
     }
 
     .login__form {
@@ -59,11 +60,14 @@
         border: none;
         cursor: pointer;
         outline: none;
+        font-size: 18px;
       }
-    }
 
-    .login__separator {
-      margin: 24px;
+      .login__error {
+        color: red;
+        text-align: center;
+        font-size: 14px;
+      }
     }
 
     .login__google {
@@ -72,7 +76,7 @@
       border-radius: 30px;
       display: flex;
       align-items: center;
-      padding: 8px 16px;
+      padding: 0px 24px;
       cursor: pointer;
 
       img {

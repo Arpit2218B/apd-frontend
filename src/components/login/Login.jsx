@@ -4,6 +4,7 @@ import '../../styles/components/Login.scss';
 const Login = () => {
 
     const [ template, setTemplate ] = useState('Register');
+    const [ error, setError ] = useState('');
 
     return (
         <div className="login">
@@ -19,6 +20,7 @@ const Login = () => {
                     <input placeholder="Enter username"></input>
                     <input type="password" placeholder="Enter password"></input>
                     <button>{template}</button>
+                    {error ? <span className="login__error">Error: {error}</span> : null }
                 </div>
                 <span className="login__separator">or</span>
                 <div className="login__google">
