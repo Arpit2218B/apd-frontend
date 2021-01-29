@@ -1,3 +1,40 @@
+.login__formElems {
+  @apply border;
+  @apply border-blue-600;
+  @apply my-2;
+  @apply p-2;
+  @apply rounded-lg;
+  @apply outline-none;
+  @apply w-72;
+}
+
+.login__formButton {
+  @apply bg-blue-600;
+  @apply text-white;
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  @apply focus-within:outline-none;
+  @apply my-4;
+
+  span {
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+
+    .MuiCircularProgress-colorPrimary {
+      @apply text-white;
+      @apply mx-2;
+    }
+  }
+}
+
+.login__tabs {
+  //   @apply mx-2;
+  @apply cursor-pointer;
+  @apply p-1;
+}
+
 // .login {
 //   height: 100vh;
 //   display: flex;

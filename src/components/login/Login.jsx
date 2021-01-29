@@ -9,8 +9,8 @@ import { CircularProgress } from '@material-ui/core';
 import { auth, provider } from '../../utils/firebase';
 
 const functionalConstants = {
-    login: 'LOGIN',
-    signup: 'SIGNUP'
+    login: 'Login',
+    signup: 'Sign up'
 }
 
 const Login = () => {
@@ -83,61 +83,36 @@ const Login = () => {
 
     return (
         <div className="flex h-screen">
-            <div className="flex-1 flex justify-center item-center">
+            <div className="flex-1 flex justify-center item-center bg-blue-500">
                 <img src={landingPageIllustration} className="w-2/3" alt="APD" />
             </div>
             <div className="flex-1 flex flex-col justify-center items-center">
-                <h1>APD</h1>
-                <div>
-                    <span onClick={() => setFunctionality(functionalConstants.login)}>Login</span>
+                <h1 className="text-8xl m-4">APD</h1>
+                <div className="flex justify-start mx-auto text-2xl items-center">
+                    <span className={functionality == functionalConstants.login ? "login__tabs text-blue-600" : "login__tabs"} onClick={() => setFunctionality(functionalConstants.login)}>Login</span>
                     <span>|</span>
-                    <span onClick={() => setFunctionality(functionalConstants.signup)}>Signup</span>
+                    <span className={functionality == functionalConstants.signup ? "login__tabs text-blue-600" : "login__tabs"} onClick={() => setFunctionality(functionalConstants.signup)}>Signup</span>
                 </div>
                 <div className="flex flex-col">
-                    {error.length > 0 ? <span>{error}</span> : null}
+                    {error.length > 0 ? <span className="text-red-500 mx-auto my-2">{error}</span> : null}
                     {
                     functionality == functionalConstants.signup 
                         ? 
-                        <input placeholder="Enter username" value={userName} onChange={e => setUserName(e.target.value)} />
+                        <input className="login__formElems" placeholder="Enter username" value={userName} onChange={e => setUserName(e.target.value)} />
                         : 
                         null 
                     }
-                    <input placeholder="Enter email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
-                    <input type="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.target.value)} />
-                    <button onClick={() => authHandler()} disabled={loading} >{loading ? <span><CircularProgress /> Loading...</span> : functionality}</button>
+                    <input className="login__formElems" placeholder="Enter email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                    <input className="login__formElems" type="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.target.value)} />
+                    <button className="login__formElems login__formButton" onClick={() => authHandler()} disabled={loading} >{loading ? <span><CircularProgress size={20} /> Loading</span> : functionality}</button>
                 </div>
-                <span>or</span>
-                <div className="login__google border border-blue-600 box-border rounded-lg flex items-center py-1 px-5 cursor-pointer" onClick={googleAuth}>
+                <span className="my-2">or</span>
+                <div className="login__google border border-blue-600 box-border my-4 rounded-lg flex items-center py-2 px-5 cursor-pointer" onClick={googleAuth}>
                 <img className="h-5 mr-3" src="https://img.favpng.com/7/1/24/google-logo-google-search-icon-png-favpng-DLXaPGArrFH6yJjYE8USnMuvX_t.jpg"></img>
                     <span>Continue with Google</span>
                 </div>
             </div>
         </div>
-
-        // <div className="flex h-screen">
-        //     <div className="flex-1 flex justify-center items-center">
-        //         <img src={landingPageIllustration} className="w-2/3" alt="Landing page illustration" />
-        //     </div>
-        //     <div className="flex-1 flex flex-col justify-center items-center">
-        //         <h1 className="text-5xl">APD</h1>
-        //         <div className="login__form flex flex-col justify-start w-1/2">
-        //             <div>
-        //                 <span className={template == 'Login' ? "login__tabs login__tabSelected" : "login__tabs cursor-pointer"} onClick={() => setTemplate('Login')}>Login</span>
-        //                 <span> | </span>
-        //                 <span className={template != 'Login' ? "login__tabs login__tabSelected" : "login__tabs"} onClick={() => setTemplate('Register')}>Register</span>
-        //             </div>
-        //             <input placeholder="Enter username" className="border border-blue-600 mx-7 outline-none p-2"></input>
-        //             <input type="password" placeholder="Enter password" className="border border-blue-600 mx-7 outline-none p-2"></input>
-        //             <button className="p-3 mx-7 bg-blue-600 text-white">{template}</button>
-        //             {error ? <span className="login__error text-red-500 text-center">Error: {error}</span> : null }
-        //         </div>
-        //         <span className="login__separator">or</span>
-        //         <div className="login__google border border-blue-600 box-border rounded-lg flex items-center py-1 px-5 cursor-pointer" onClick={loginHandler}>
-        //         <img className="h-5 mr-3" src="https://img.favpng.com/7/1/24/google-logo-google-search-icon-png-favpng-DLXaPGArrFH6yJjYE8USnMuvX_t.jpg"></img>
-        //             <span>Continue with Google</span>
-        //         </div>
-        //     </div>
-        // </div>
     )
 }
 
