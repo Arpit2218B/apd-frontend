@@ -1,130 +1,105 @@
-.login__formElems {
-  @apply border;
-  @apply border-blue-600;
-  @apply my-2;
-  @apply p-2;
-  @apply rounded-lg;
-  @apply outline-none;
-  @apply w-72;
-}
+.login {
+  height: 100vh;
+  display: flex;
 
-.login__formButton {
-  @apply bg-blue-600;
-  @apply text-white;
-  @apply flex;
-  @apply justify-center;
-  @apply items-center;
-  @apply focus-within:outline-none;
-  @apply my-4;
+  .login__left {
+    flex-basis: 55%;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
 
-  span {
-    @apply flex;
-    @apply justify-center;
-    @apply items-center;
-
-    .MuiCircularProgress-colorPrimary {
-      @apply text-white;
-      @apply mx-2;
+    img {
+      height: 90%;
     }
   }
+
+  .login__right {
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: 5em;
+      margin-bottom: 24px;
+    }
+
+    .login__tabs {
+      margin: 8px;
+      padding: 8px;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+
+    .selected {
+      color: blue;
+    }
+  }
+
+  .login__form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 16px;
+
+    .login__error {
+      color: red;
+      text-align: center;
+    }
+
+    .login__formElems {
+      border: 2px solid blue;
+      margin: 8px 0;
+      padding: 10px;
+      outline: none;
+      border-radius: 16px;
+    }
+
+    .login__formButton {
+      background-color: blue;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      outline: none;
+      font-size: 1.1em;
+      margin: 20px 0;
+      cursor: pointer;
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .MuiCircularProgress-colorPrimary {
+          color: white;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+
+  .login__google {
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 8px 24px;
+    margin: 20px 0;
+    cursor: pointer;
+
+    img {
+      height: 30px;
+      object-fit: contain;
+      margin: 0 8px;
+    }
+  }
+
+  .login__google:hover {
+    border-color: blue;
+  }
 }
-
-.login__tabs {
-  //   @apply mx-2;
-  @apply cursor-pointer;
-  @apply p-1;
-}
-
-// .login {
-//   height: 100vh;
-//   display: flex;
-
-//   .login__left {
-//     flex: 55%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     .lp_ill {
-//       width: 65%;
-//     }
-//   }
-
-//   .login__right {
-//     flex: 45%;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-
-//     * {
-//       margin: 10px 0;
-//     }
-
-//     h1 {
-//       font-size: 6rem;
-//     }
-
-//     .login__form {
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: flex-start;
-//       width: 50%;
-
-//       .login__tabs {
-//         cursor: pointer;
-//         font-size: 20px;
-//         margin: 10px;
-//       }
-
-//       .login__tabs:hover {
-//         color: blue;
-//       }
-
-//       .login__tabSelected {
-//         color: blue;
-//       }
-
-//       input {
-//         padding: 10px;
-//         margin: 10px 0;
-//         border-radius: 10px;
-//         outline: none;
-//         border: 1px solid blue;
-//       }
-
-//       button {
-//         padding: 10px;
-//         margin: 10px 0;
-//         border-radius: 10px;
-//         background-color: rgba(63, 129, 252, 0.85);
-//         color: white;
-//         border: none;
-//         cursor: pointer;
-//         outline: none;
-//         font-size: 18px;
-//       }
-
-//       .login__error {
-//         color: red;
-//         text-align: center;
-//         font-size: 14px;
-//       }
-//     }
-
-//     .login__google {
-//       border: 1px solid #000000;
-//       box-sizing: border-box;
-//       border-radius: 30px;
-//       display: flex;
-//       align-items: center;
-//       padding: 0px 24px;
-//       cursor: pointer;
-
-//       img {
-//         height: 30px;
-//         object-fit: contain;
-//         margin-left: 8px;
-//       }
-//     }
-//   }
-// }
