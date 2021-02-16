@@ -60,7 +60,7 @@ const AppBody = ({ children }) => {
                     <Alert />
                     {children}
                 </div>
-                <Tasks>
+                {/* <Tasks>
                     <button>Open</button>
                 </Tasks>
                 <Tasks>
@@ -71,7 +71,7 @@ const AppBody = ({ children }) => {
                 <button onClick={messageOut} >Success</button>
                 {counter.current}
                 <Dropdown  options={['Last 10 days', 'Last week', 'Last month']} changeHandler={(e) => alert(e.target.value)} />
-                <Dropdown  options={[10, 20, 30, 40]} changeHandler={(e) => alert(e.target.value * 10)} />
+                <Dropdown  options={[10, 20, 30, 40]} changeHandler={(e) => alert(e.target.value * 10)} /> */}
             </div>
         </div>
     )

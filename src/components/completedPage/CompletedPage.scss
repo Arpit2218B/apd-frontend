@@ -1,0 +1,78 @@
+.completed__tile {
+  height: 250px;
+  background: #ffffff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  .completedTile__top,
+  .completedTile__bottom {
+    flex-basis: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .completedTile__top {
+    align-items: flex-start;
+  }
+
+  .completedTile__middle {
+    flex-basis: 80%;
+    max-width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+
+    h3 {
+      font-weight: 400 !important;
+    }
+  }
+
+  .default {
+    color: #878787;
+  }
+
+  .thanklessTask {
+    color: #fbbc05;
+  }
+
+  .majorProjects {
+    color: #e55050;
+  }
+
+  .quickWin {
+    color: #7faaff;
+  }
+
+  .necessaryEvil {
+    color: #00ff7f;
+  }
+}
+
+.completed__tile:hover {
+  cursor: pointer;
+  outline: 1px solid #878787;
+}
+
+.completed__container {
+  padding: 32px;
+  max-height: 90%;
+  overflow-y: auto;
+
+  .completed__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  .completed__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
+  }
+}

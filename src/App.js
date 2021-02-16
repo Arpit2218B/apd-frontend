@@ -5,6 +5,7 @@ import Login from './components/login/Login';
 import store from './dataStore/store';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ProtectedRoute from './components/common/ProtectedRoutes';
+import CompletedPage from './components/completedPage/CompletedPage';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
                   <h1>current tasks</h1>
                 </Route>
                 <Route path="/app/completed">
-                  <h1>completed tasks</h1>
+                  <CompletedPage />
                 </Route>
                 <Route path="/app/reports">
                   <h1>reports</h1>

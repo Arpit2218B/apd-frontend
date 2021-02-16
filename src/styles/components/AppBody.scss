@@ -1,6 +1,7 @@
 .appBody {
   display: flex;
   height: 100vh;
+  max-height: 100vh;
 }
 
 .sidebar {
@@ -167,7 +168,8 @@
   }
 
   .content {
-    // background-color: #e5e5e5;
-    // height: 92%;
+    background-color: #e5e5e5;
+    height: 92%;
+    max-height: 92%;
   }
 }
