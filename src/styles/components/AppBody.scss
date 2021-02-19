@@ -5,7 +5,7 @@
 }
 
 .sidebar {
-  width: 15vw;
+  width: 11vw;
   max-width: 240px;
   transition: width 0.55s;
   display: flex;
@@ -35,9 +35,9 @@
       justify-content: center;
 
       button {
-        padding: 8px 38px;
+        padding: 8px 30px;
         margin: 24px auto;
-        border: 1px solid #0057ff;
+        border: 1px solid #0057FF;
         box-sizing: border-box;
         border-radius: 30px;
         outline: none;
@@ -46,6 +46,7 @@
         justify-content: center;
         align-items: center;
         background-color: transparent;
+        color: #4386F4;
       }
     }
 
@@ -62,7 +63,7 @@
       }
 
       .links {
-        padding: 10px 8px;
+        padding: 10px 15px;
         width: 100%;
         display: flex;
         align-items: center;
@@ -75,8 +76,16 @@
       }
 
       .links:hover {
-        border-left: 4px solid #0057ff;
         background: rgba(84, 143, 252, 0.1);
+        position: relative;
+        &::after{
+          content: "";
+          background: #0057ff;
+          position: absolute;
+          left: 0;
+          height: 65%;
+          width: 4px;
+        }
       }
     }
   }
@@ -91,8 +100,14 @@
     font-size: 18px;
     padding-bottom: 8px;
 
+    .separator {
+      width: 80%;
+      border-top: 1px solid #C4C4C4;
+      margin: 0 auto;
+    }
+
     .links {
-      padding: 10px 8px;
+      padding: 10px 15px;
       width: 100%;
       display: flex;
       align-items: center;
@@ -105,13 +120,23 @@
     }
 
     .links:hover {
-      border-left: 4px solid #0057ff;
       background: rgba(84, 143, 252, 0.1);
+      position: relative;
+      &::after{
+        content: "";
+        background: #0057ff;
+        position: absolute;
+        left: 0;
+        height: 65%;
+        width: 4px;
+      }
     }
 
     .collapse:hover {
-      border: none;
       background-color: transparent;
+      &::after{
+        background-color: transparent;
+      }
     }
   }
 }
@@ -168,7 +193,7 @@
   }
 
   .content {
-    background-color: #e5e5e5;
+    background-color: #F5F5F5;
     height: 92%;
     max-height: 92%;
   }
