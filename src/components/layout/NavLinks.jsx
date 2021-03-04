@@ -9,6 +9,10 @@ const buttonStyle = {
     "padding": 0
 }
 
+const iconSpacing = {
+    "margin-right": "10px"
+}
+
 const NavItems = ({type, content, icon, collapsed}) => {
     if (type == 'link') {
         return (
@@ -21,7 +25,7 @@ const NavItems = ({type, content, icon, collapsed}) => {
 
     if (type == 'button') {
         return (
-            <button style={collapsed ? buttonStyle : null}>{icon} {collapsed ? null : content}</button>
+            <button style={collapsed ? buttonStyle : null}><span style={collapsed ? null : iconSpacing}>{icon}</span>{collapsed ? null : content}</button>
         )
     }
 }

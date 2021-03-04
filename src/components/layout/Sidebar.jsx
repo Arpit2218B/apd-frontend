@@ -12,12 +12,16 @@ const sidebarStyle = {
     width: "5vw"
 }
 
+const sidebarStyleNormal = {
+    "min-width": "11vw"
+}
+
 const Sidebar = () => {
     
     const [ collapsed, setCollapsed ] = useState(false);
 
     return (
-        <div style={collapsed ? sidebarStyle : null} className="sidebar">
+        <div style={collapsed ? sidebarStyle : sidebarStyleNormal} className="sidebar">
             <div className="top">
                 <div className="logo">
                     <h2>APD</h2>
@@ -26,7 +30,7 @@ const Sidebar = () => {
                     <Tasks>
                         <NavItems 
                             type="button" 
-                            content="Add task" 
+                            content="Create task" 
                             icon={<Add />} 
                             collapsed={collapsed} 
                         />
@@ -68,6 +72,7 @@ const Sidebar = () => {
                 </div>
             </div>
             <div className="bottom">
+                <hr className="separator"/>
                 <NavItems 
                     type="link" 
                     content="Settings" 

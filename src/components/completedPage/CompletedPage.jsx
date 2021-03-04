@@ -8,7 +8,7 @@ const CompletedPage = () => {
     return (
         <div className="completed__container">
             <div className="completed__header">
-                <h2>Completed</h2>
+                <h2>Completed Tasks</h2>
                 <div>
                     <Dropdown options={['Last 10 days', 'Last week', 'Last month']} changeHandler={(e) => alert(e.target.value)} />
                     <Dropdown options={['Last 10 days', 'Last week', 'Last month']} changeHandler={(e) => alert(e.target.value)} />
