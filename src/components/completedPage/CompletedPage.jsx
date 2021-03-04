@@ -2,6 +2,7 @@ import React from 'react';
 import Dropdown from '../common/Dropdown';
 import './CompletedPage.scss';
 import CompletedTile from './CompletedTile';
+import Tasks from '../common/Tasks';
 
 const CompletedPage = () => {
     return (
@@ -14,15 +15,13 @@ const CompletedPage = () => {
                 </div>
             </div>
             <div className="completed__grid">
-                <CompletedTile />
-                <CompletedTile />
-                <CompletedTile />
-                <CompletedTile />
-                <CompletedTile />
-                <CompletedTile />
-                <CompletedTile />
-                {/* <CompletedTile /> */}
-                {/* <CompletedTile /> */}
+                <Tasks editable={true}><CompletedTile /></Tasks>
+                <Tasks editable={false}><CompletedTile /></Tasks>
+                <Tasks><CompletedTile /></Tasks>
+                <Tasks><CompletedTile /></Tasks>
+                <Tasks><CompletedTile /></Tasks>
+                <Tasks><CompletedTile /></Tasks>
+                <Tasks><CompletedTile /></Tasks>
             </div>
         </div>
     )
