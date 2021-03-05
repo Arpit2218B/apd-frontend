@@ -27,7 +27,7 @@ const Sidebar = () => {
                     <h2>APD</h2>
                 </div>
                 <div className="addTask">
-                    <Tasks>
+                    <Tasks editable={true}>
                         <NavItems 
                             type="button" 
                             content="Create task" 

@@ -15,8 +15,8 @@ const CompletedPage = () => {
                 </div>
             </div>
             <div className="completed__grid">
-                <Tasks editable={true}><CompletedTile /></Tasks>
-                <Tasks editable={false}><CompletedTile /></Tasks>
+                <Tasks><CompletedTile /></Tasks>
+                <Tasks><CompletedTile /></Tasks>
                 <Tasks><CompletedTile /></Tasks>
                 <Tasks><CompletedTile /></Tasks>
                 <Tasks><CompletedTile /></Tasks>
