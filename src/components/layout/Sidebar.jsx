@@ -1,6 +1,6 @@
 import { Add, BarChartOutlined, ChevronLeftOutlined, ChevronRightOutlined, DashboardOutlined, PlaylistAddCheckOutlined, SettingsOutlined, SubjectOutlined } from '@material-ui/icons';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Tasks from '../common/Tasks';
 import NavItems from './NavLinks';
 
@@ -37,38 +37,38 @@ const Sidebar = () => {
                     </Tasks>
                 </div>
                 <div className="topnav">
-                    <Link to="/app/dashboard">
+                    <NavLink to="/app/dashboard" activeClassName="selected">
                         <NavItems 
                             type="link" 
                             content="Dashboard" 
                             icon={<DashboardOutlined />} 
-                            collapsed={collapsed} 
+                            collapsed={collapsed}
                         />
-                    </Link>
-                    <Link to="/app/current">
+                    </NavLink>
+                    <NavLink to="/app/current" activeClassName="selected">
                         <NavItems 
                             type="link" 
                             content="Current Tasks" 
                             icon={<SubjectOutlined />} 
-                            collapsed={collapsed} 
+                            collapsed={collapsed}
                         />
-                    </Link>
-                    <Link to="/app/completed">
+                    </NavLink>
+                    <NavLink to="/app/completed" activeClassName="selected">
                         <NavItems 
                             type="link" 
                             content="Completed Tasks" 
                             icon={<PlaylistAddCheckOutlined />} 
-                            collapsed={collapsed} 
+                            collapsed={collapsed}
                         />
-                    </Link>
-                    <Link to="/app/reports">
+                    </NavLink>
+                    <NavLink to="/app/reports" activeClassName="selected">
                         <NavItems 
                             type="link" 
                             content="Reports" 
                             icon={<BarChartOutlined />} 
-                            collapsed={collapsed} 
+                            collapsed={collapsed}
                         />
-                    </Link>
+                    </NavLink>
                 </div>
             </div>
             <div className="bottom">
