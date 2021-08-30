@@ -6,6 +6,7 @@ import store from './dataStore/store';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ProtectedRoute from './components/common/ProtectedRoutes';
 import CompletedPage from './components/completedPage/CompletedPage';
+import Dashboard from './components/dashboard/Dashboard';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
             <ProtectedRoute path="/app">
               <AppBody>
                 <Route path="/app/dashboard">
-                  <h1>dashboard</h1>
+                  <Dashboard />
                 </Route>
                 <Route path="/app/current">
                   <h1>current tasks</h1>

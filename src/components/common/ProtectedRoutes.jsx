@@ -6,6 +6,11 @@ const ProtectedRoute = ({ children, ...rest }) => {
 
     const user = useSelector(state => state.userReducer);
 
+    // For dev purpose
+    user.user = {
+        name: 'Test User'
+    }
+
     const isAuthenticated = user.user != null;
     return (
         <Route {...rest} render={() => {

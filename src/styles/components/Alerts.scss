@@ -1,11 +1,12 @@
 .alerts {
   box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.1);
-  border-radius: 15px;
+  border-radius: 4px;
   width: 20vw;
   padding: 16px;
   position: absolute;
   right: 20px;
   top: 10vh;
+  background-color: white;
 
   .alerts__close {
     float: right;
